@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    width:1080px;height:1080px;overflow:hidden;
+    font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    background:#121826;position:relative;
+  }
+  .accent-bar{
+    position:absolute;top:0;left:0;right:0;height:8px;
+    background:linear-gradient(90deg,#00D4AA,#00A8E8);
+  }
+  .glow-1{
+    position:absolute;top:-200px;right:-150px;
+    width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,212,170,0.08),transparent 70%);
+  }
+  .glow-2{
+    position:absolute;bottom:-150px;left:-100px;
+    width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,168,232,0.06),transparent 70%);
+  }
+  .brand{
+    position:absolute;bottom:32px;left:48px;
+    font-size:13px;font-weight:700;color:rgba(255,255,255,0.2);
+    letter-spacing:2px;
+  }
+  .brand span{color:#00D4AA}
+  .content{
+    position:absolute;top:50%;left:0;right:0;
+    transform:translateY(-50%);padding:0 56px;
+  }
+  .eyebrow{
+    font-size:13px;font-weight:700;color:#00D4AA;
+    letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;
+  }
+  h1{
+    font-size:52px;font-weight:700;color:#FFFFFF;line-height:1.15;
+    margin-bottom:12px;
+  }
+  h1 span{background:linear-gradient(135deg,#00D4AA,#00A8E8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{
+    font-size:20px;font-weight:400;color:rgba(255,255,255,0.5);
+    line-height:1.5;margin-bottom:32px;max-width:800px;
+  }
+  .features{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  .feat{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:12px;padding:18px 20px;
+  }
+  .feat-icon{font-size:20px;margin-bottom:4px}
+  .feat-title{font-size:16px;font-weight:600;color:#fff;margin-bottom:4px}
+  .feat-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.4}
+  .cta-row{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);
+  }
+  .cta-link{
+    font-size:15px;color:rgba(255,255,255,0.3);font-weight:400;
+  }
+  .cta-btn{
+    background:linear-gradient(90deg,#00D4AA,#00A8E8);
+    color:#fff;border:none;border-radius:8px;
+    padding:12px 28px;font-size:15px;font-weight:600;
+    letter-spacing:0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="accent-bar"></div>
+<div class="glow-1"></div><div class="glow-2"></div>
+
+<div class="content">
+  <div class="eyebrow">🚀 Free Tool for Freelancers</div>
+  <h1>Meet <span>Bilang</span></h1>
+  <div class="sub">Track your billable hours and generate professional invoices — all in one place. No signup, no installation, completely free.</div>
+  
+  <div class="features">
+    <div class="feat">
+      <div class="feat-icon">⏱️</div>
+      <div class="feat-title">One-Click Timer</div>
+      <div class="feat-desc">Enter client + rate, press Start. See earnings update in real-time.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📄</div>
+      <div class="feat-title">Invoice Generator</div>
+      <div class="feat-desc">7 professional templates. Pick a client, date range, save as PDF.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Offline</div>
+      <div class="feat-desc">All data stays in your browser. Nothing uploaded to any server.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📊</div>
+      <div class="feat-title">Export Any Time</div>
+      <div class="feat-desc">CSV, JSON backups, session history, and per-client summaries.</div>
+    </div>
+  </div>
+  
+  <div class="cta-row">
+    <div class="cta-link">👆 Try it at jaytech-tips.github.io/bilang</div>
+    <div class="cta-btn">Use Bilang Free →</div>
+  </div>
+</div>
+
+<div class="brand">JT · <span>JAYTECH</span> TIPS</div>
+</body>
+</html>

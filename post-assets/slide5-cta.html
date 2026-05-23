@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    width:1080px;height:1080px;overflow:hidden;
+    font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    background:#121826;position:relative;
+  }
+  .accent-bar{
+    position:absolute;top:0;left:0;right:0;height:8px;
+    background:linear-gradient(90deg,#00D4AA,#00A8E8);
+  }
+  .glow-1{
+    position:absolute;top:-200px;right:-150px;
+    width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,212,170,0.08),transparent 70%);
+  }
+  .glow-2{
+    position:absolute;bottom:-150px;left:-100px;
+    width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,168,232,0.06),transparent 70%);
+  }
+  .brand{
+    position:absolute;bottom:32px;left:48px;
+    font-size:13px;font-weight:700;color:rgba(255,255,255,0.2);
+    letter-spacing:2px;
+  }
+  .brand span{color:#00D4AA}
+  .content{
+    position:absolute;top:50%;left:0;right:0;
+    transform:translateY(-50%);padding:0 56px;
+    text-align:center;
+  }
+  .icon-big{font-size:72px;margin-bottom:16px}
+  h1{
+    font-size:48px;font-weight:700;color:#FFFFFF;line-height:1.2;
+    margin-bottom:16px;
+  }
+  h1 span{background:linear-gradient(135deg,#00D4AA,#00A8E8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{
+    font-size:20px;font-weight:400;color:rgba(255,255,255,0.5);
+    line-height:1.6;margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto;
+  }
+  .url-box{
+    display:inline-flex;align-items:center;gap:12px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;padding:16px 32px;
+    font-size:18px;font-weight:600;color:#fff;
+    letter-spacing:0.5px;
+  }
+  .url-box .arrow{color:#00D4AA;font-size:22px}
+  .features-row{
+    display:flex;justify-content:center;gap:24px;
+    margin-top:36px;
+  }
+  .feat-tag{
+    display:flex;align-items:center;gap:6px;
+    font-size:14px;color:rgba(255,255,255,0.5);
+  }
+  .page-indicator{
+    position:absolute;bottom:32px;right:48px;
+    display:flex;gap:8px;align-items:center;
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15)}
+  .dot.active{background:#00D4AA;width:24px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="accent-bar"></div>
+<div class="glow-1"></div><div class="glow-2"></div>
+
+<div class="content">
+  <div class="icon-big">🎯</div>
+  <h1>Try <span>Bilang</span> Today</h1>
+  <div class="sub">Free, offline, no signup needed. Built for the PH freelance community.</div>
+  
+  <div class="url-box">
+    <span class="arrow">→</span>
+    jaytech-tips.github.io/bilang
+  </div>
+  
+  <div class="features-row">
+    <div class="feat-tag">⏱️ Time Tracking</div>
+    <div class="feat-tag">📄 Invoice Generator</div>
+    <div class="feat-tag">🔒 100% Offline</div>
+    <div class="feat-tag">🆓 Completely Free</div>
+  </div>
+</div>
+
+<div class="brand">JT · <span>JAYTECH</span> TIPS</div>
+<div class="page-indicator">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot active"></div>
+</div>
+</body>
+</html>
