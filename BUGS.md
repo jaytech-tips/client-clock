@@ -75,3 +75,13 @@ elapsedSec = ts.running ? (now - ts.startTime) / 1000 + ts.elapsed : ts.elapsed;
 
 **Status:** ✅ Already implemented
 `toggleDark()` saves to localStorage via `sv()`, `applyDark()` restores on page load. If it's not working on your end, let me know.
+
+---
+
+## GCash QR image is missing (404)
+
+**Severity:** Low
+**Affects:** v2.1.0+
+**Reason:** `gcash-qr.jpg` was never committed to the repo. Since the repo was renamed, the old URL broke and now shows 404. Even before rename, it never loaded.
+
+**Fix:** Either (a) remove the image until the real QR is ready, replacing with a placeholder text, or (b) add the actual QR image to the repo.
