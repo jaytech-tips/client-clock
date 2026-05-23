@@ -1,9 +1,9 @@
-# Client Clock — v2 Ideas
+# Bilang — Roadmap
 
 Backlog for next iteration. Prioritized roughly top-to-bottom.
 
 ## Medium
-- [ ] **Earnings rate in Settings** — a default hourly rate that feeds into an "earnings today" stat in the summary. Currently shows hours but not ₱/day earned.
+- [ ] **Earnings rate in Settings** — a default hourly rate that feeds into an "earnings today" stat. Currently shows hours but not ₱/day earned.
 - [ ] **Dark mode toggle** — already mostly supported via CSS variables, just needs a permanent toggle somewhere visible
 - [ ] **Keyboard shortcuts** — `Space` for start/pause, `D` for done, `Esc` to cancel. Small QoL.
 

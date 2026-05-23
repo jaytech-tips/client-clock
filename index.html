@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Clock – Track Your Freelance Hours</title>
+<title>Bilang – Track Your Billable Hours</title>
 <style>
   :root {
     --bg: #f8f9fc; --card: #fff; --text: #1a1a2e; --muted: #6c757d;
@@ -214,7 +214,7 @@
         <div class="hand" style="width:2px;height:14px;transform:translateX(-50%) rotate(-60deg)"></div>
       </div>
       <div>
-        <h1>Client Clock <small>Track billable hours per client</small></h1>
+        <h1>Bilang <small>Track your billable hours</small></h1>
       </div>
     </div>
     <div class="header-actions">
@@ -283,7 +283,7 @@
 <!-- Tutorial -->
 <div class="modal-overlay" id="tutorialModal">
   <div class="modal">
-    <h2>📖 How to Use Client Clock</h2>
+    <h2>📖 How to Use Bilang</h2>
     <div class="tutorial-step"><div class="tutorial-num">1</div><div><h4>Quick-Start or Manual</h4><p>Click a <strong>preset button</strong> above the timer, or type a client name + rate. Press <kbd>Enter</kbd> to start tracking.</p></div></div>
     <div class="tutorial-step"><div class="tutorial-num">2</div><div><h4>Track Your Time</h4><p><strong>⏸ Pause</strong> for breaks, <strong>✅ Done</strong> to finish and save, <strong>✕ Cancel</strong> to end without logging billable time (session is still saved as "Cancelled" so no data is lost).</p></div></div>
     <div class="tutorial-step"><div class="tutorial-num">3</div><div><h4>Review & Filter</h4><p>Click a client name to see their history. <strong>📊</strong> for weekly/monthly summaries. <strong>📥</strong> to backup.</p></div></div>
@@ -310,7 +310,7 @@
   <div class="modal" style="text-align:center">
     <h2>☕ Support This Project</h2>
     <p style="font-size:.85rem;color:var(--muted);margin-bottom:16px">
-      Client Clock is and will always be free.<br>
+      Bilang is and will always be free.<br>
       If it helps you earn, consider buying me a coffee ❤️
     </p>
     <div style="background:var(--input-bg);border-radius:var(--radius);padding:20px;margin-bottom:16px;display:inline-block">
@@ -364,7 +364,7 @@
   <div class="modal" style="text-align:center">
     <h2>💬 Suggestions?</h2>
     <p style="font-size:.85rem;color:var(--muted);margin-bottom:16px">
-      Got an idea to make Client Clock better?<br>
+      Got an idea to make Bilang better?<br>
       Found a bug? Something confusing?<br>
       Let me know through the form below 👇
     </p>
@@ -493,7 +493,7 @@ function fmtShort(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60);return
 
 function updateDisplay(){
   if(!ts){
-    document.title='Client Clock';
+    document.title='Bilang';
     document.getElementById('timerDisplay').textContent='00:00:00';
     document.getElementById('timerDisplay').className='timer-display';
     document.getElementById('timerEarnings').textContent='';
@@ -506,7 +506,7 @@ function updateDisplay(){
 
   document.getElementById('timerDisplay').textContent=display;
   document.getElementById('timerDisplay').className=cls;
-  document.title=display+' - Client Clock';
+  document.title=display+' - Bilang';
 
   // Running earnings
   const hrs=elapsed/3600;
@@ -692,8 +692,8 @@ function renderSummary(){
 // ============================================================
 // EXPORT
 // ============================================================
-function exportAllCSV(){if(!data.sessions.length){showToast('No data');return}let c='Date,Client,Duration (min),Duration (hrs),Rate,Earnings,Notes,Status\n';data.sessions.sort((a,b)=>a.timestamp.localeCompare(b.timestamp)).forEach(s=>{const d=new Date(s.timestamp).toLocaleDateString();c+=`"${d}","${s.client}",${Math.round(s.duration/60)},${(s.duration/3600).toFixed(2)},${s.rate},${((s.duration/3600)*s.rate).toFixed(2)},"${(s.notes||'').replace(/"/g,'""')}","${s.status||'completed'}"\n`});dl(c,'client-clock-export.csv','text/csv');showToast('CSV downloaded')}
-function exportJSON(){dl(JSON.stringify(data,null,2),'client-clock-backup.json','application/json');showToast('Backup downloaded')}
+function exportAllCSV(){if(!data.sessions.length){showToast('No data');return}let c='Date,Client,Duration (min),Duration (hrs),Rate,Earnings,Notes,Status\n';data.sessions.sort((a,b)=>a.timestamp.localeCompare(b.timestamp)).forEach(s=>{const d=new Date(s.timestamp).toLocaleDateString();c+=`"${d}","${s.client}",${Math.round(s.duration/60)},${(s.duration/3600).toFixed(2)},${s.rate},${((s.duration/3600)*s.rate).toFixed(2)},"${(s.notes||'').replace(/"/g,'""')}","${s.status||'completed'}"\n`});dl(c,'bilang-export.csv','text/csv');showToast('CSV downloaded')}
+function exportJSON(){dl(JSON.stringify(data,null,2),'bilang-backup.json','application/json');showToast('Backup downloaded')}
 function importJSON(){document.getElementById('importFile').click()}
 function handleImport(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const imp=JSON.parse(ev.target.result);if(!imp.sessions){showToast('Invalid backup');return}if(confirm(`Merge ${imp.sessions.length} sessions? (Cancel to replace)`)){data.sessions=[...data.sessions,...imp.sessions];data.clientRates={...data.clientRates,...(imp.clientRates||{})};data.presets=[...data.presets,...(imp.presets||[])];if(imp.settings)data.settings={...data.settings,...imp.settings}}else data=imp;sv();render();showToast(`Imported ${imp.sessions.length} sessions`)}catch{showToast('Error reading file')}};r.readAsText(f);e.target.value=''}
 function clearAllData(){if(!confirm('Delete ALL data? Cannot be undone.'))return;if(!confirm('Sure?'))return;data=dd();data.settings.darkMode=document.body.classList.contains('dark');sv();render();toggleModal('exportModal');showToast('Cleared')}
