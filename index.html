@@ -249,6 +249,7 @@
     </div>
     <div style="margin-top:14px;border-top:1px solid var(--border);padding-top:12px">
       <button class="btn btn-outline btn-sm" onclick="toggleModal('supportModal')" style="color:var(--muted);font-size:.75rem">☕ Support this project</button>
+      <button class="btn btn-outline btn-sm" onclick="toggleModal('termsModal')" style="color:var(--muted);font-size:.75rem;margin-left:6px">📜 Terms</button>
     </div>
   </div>
 
@@ -333,6 +334,32 @@
     </div>
   </div>
 </div>
+<!-- Terms Modal -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal" style="max-width:520px">
+    <h2>📜 Terms of Use</h2>
+    <div style="font-size:.82rem;color:var(--text);line-height:1.7">
+      <p><strong>Bilang</strong> is a free time-tracking tool provided as-is, with no warranties or guarantees.</p>
+      <br>
+      <p><strong>1. Data & Privacy.</strong> All your data — sessions, notes, settings — is stored entirely in your browser's localStorage. Nothing is uploaded, transmitted, or stored on any server. We have no access to your data. Back up your data regularly using the Export feature; clearing your browser cache will erase everything.</p>
+      <br>
+      <p><strong>2. No Warranty.</strong> This tool is provided "as is" without warranty of any kind. We make no guarantees about accuracy, availability, or fitness for a particular purpose. Time records and invoices you generate are your responsibility — verify before sending to clients.</p>
+      <br>
+      <p><strong>3. No Liability.</strong> We are not liable for any damages, lost revenue, billing disputes, or data loss arising from the use of Bilang. You use this tool at your own risk.</p>
+      <br>
+      <p><strong>4. Honest Use.</strong> Bilang is designed for honest time tracking. We've intentionally removed the ability to edit session durations to prevent misuse. Do not use this tool to misrepresent your billable hours.</p>
+      <br>
+      <p><strong>5. Free Forever.</strong> Bilang is and will remain free. No paid tiers, no subscriptions, no ads. If you'd like to support the project, donations are accepted via GCash.</p>
+      <br>
+      <p><strong>6. Changes.</strong> These terms may be updated as the tool evolves. Continued use after changes constitutes acceptance.</p>
+      <br>
+      <p style="color:var(--muted);font-size:.75rem">Last updated: May 23, 2026 · Built by Jaytech Tips for the PH freelance community.</p>
+    </div>
+    <div class="modal-actions"><button class="btn btn-primary btn-sm" onclick="toggleModal('termsModal')">Got it</button></div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
 <div class="modal-overlay" id="settingsModal">
   <div class="modal">
     <h2>⚙️ Settings</h2>
